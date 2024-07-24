@@ -1,0 +1,44 @@
+import expoPenny as expoPenny
+
+def dblPenny(numDays, xNumDays, xNumPayments):
+    totalAmount = xNumPayments
+    while totalAmount != 0:
+        print (dblPenny(
+            numDays,
+            xNumDays,
+            xNumPayments))
+    return dblPenny
+
+def convert_to_boolean(response: str) -> bool:
+    response_mapping = {
+        "yes": True,
+        "y": True,
+        "no": False,
+        "n": False,
+        "sure": True,
+        "nope": False,
+        "hell no": False,
+        "why not": True,
+        "absolutely": True,
+        "ok": True,
+        "noo": False
+    }
+    return response_mapping.get(response.strip().lower(), None)
+
+def boolean_to_yes_no(value: bool) -> str:
+    return "yes" if value else "no"
+
+response = input("Are you sure about proceeding? (yes | no): ")
+is_positive = convert_to_boolean(response)
+counter = 0
+numPayments = expoPenny.xNumPayments
+
+if convert_to_boolean(response) == True:
+    print(f"You said {boolean_to_yes_no(is_positive)}.\nOk.. You will receive {numPayments}!")
+elif convert_to_boolean(response) == False:
+    print(f"You said {boolean_to_yes_no(is_positive)}.\nYou will receive nothing!")
+else:
+    while convert_to_boolean(response) != True and convert_to_boolean(response) != False and counter < 2:
+        print(f"That is an invalid answer: {response}")
+        print("Good Bye!")
+        break
