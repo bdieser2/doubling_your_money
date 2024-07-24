@@ -13,15 +13,29 @@ def convert_to_boolean(response: str) -> bool:
     response_mapping = {
         "yes": True,
         "y": True,
+        "all right": True,
+        "sure": True,
+        "alright": True,
+        "very well": True,
+        "of coure": True,
+        "by all means": True,
+        "certianly": True,
+        "absolutely": True,
+        "indeed": True,
+        "affirmative": True,
+        "agreed": True,
+        "roger": True,
+        "aye": True,
         "no": False,
         "n": False,
-        "sure": True,
         "nope": False,
         "hell no": False,
-        "why not": True,
-        "absolutely": True,
-        "ok": True,
-        "noo": False
+        "not at all": False,
+        "negative": False,
+        "never": False,
+        "nae": False,
+        "nay": False,
+        "not at all": False
     }
     return response_mapping.get(response.strip().lower(), None)
 
